@@ -34,12 +34,16 @@
 
             <!-- スタート画面 -->
             <div id="disp1" >
-                <h1>Scan Me</h1>
+                <h1 style="display:none;">Scan Me</h1>
+                <img src="./static/images/scanme_font_blue.png" style="width: 60vw;hight:auto; ">
+                <br>
+                <br>
+                <br>
                 <br>
                 <!-- ボタン -->
                 <a class="btn btn-dark btn-lg">
                     <label for="uploadFile">
-                        はじめる
+                        写真を選ぶ
                         <input type="file" id="uploadFile" style="display:none;" name="image" class="img">
                     </label>
                 </a>
@@ -47,31 +51,33 @@
 
             <!-- 画像確認画面 -->
             <div id="disp2" class="text-vertical-center" style="display:none;">
-                <div id="imagePreview" src=""></div>
-                <a class="btn btn-light btn-lg">
-                    <label for="cancelFile">
-                        キャンセル
-                        <input id="cancelFile" type="button" style="display:none;">
-                    </label>
-                </a>
-                <a class="btn btn-dark btn-lg">
-                    <label for="sendFile">
-                        送信
-                        <input type="submit" id="sendFile" value="" style="display:none;">
-                    </label>
-                </a>
+                <div class="upper1">
+                    <div id="imagePreview" src=""></div>
+                </div>
+                <div class="lower">
+                    <a class="btn btn-dark btn-lg" style="width: 50vw;margin: 0;">
+                        <label for="sendFile">
+                            この写真でOK！
+                            <input type="submit" id="sendFile" value="" style="display:none;">
+                        </label>
+                    </a>
+                    <a class="btn btn-light btn-lg" style="width: 50vw;margin: 0;">
+                        <label for="cancelFile">
+                            キャンセル
+                            <input id="cancelFile" type="button" style="display:none;">
+                        </label>
+                    </a>
+                </div>
             </div>
         </form>
     </header>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <hr class="small">
-                    <p class="text-muted">Copyright &copy; Norway's geek</p>
-                </div>
+    <footer class="footer">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+                <hr class="small">
+                <p class="text-muted">Copyright &copy; Norway's geek</p>
             </div>
         </div>
     </footer>
@@ -94,7 +100,7 @@
                     reader.onloadend = function(){ // set image data as background of div
                         $("#imagePreview").css("background-image", "url("+this.result+")");
                         // readerのresultプロパティに、データURLとしてエンコードされたファイルデータを格納
-                        $('#imagePreview').attr('src', reader.result );
+                        //$('#imagePreview').attr('src', reader.result );
                     }
                 }
             });
