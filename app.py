@@ -33,8 +33,7 @@ def upload():
         f = request.files['image']
 
         rand_name = generateRand()
-
-        # 乱数を取得してファイル名にする
+        
         filename = rand_name + '.jpg'
 
         sec_filename = secure_filename(filename)
