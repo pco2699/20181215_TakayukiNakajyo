@@ -1,0 +1,22 @@
+<!doctype HTML>
+<html>
+<script src="scripts/aframe.js" type="text/javascript"></script>
+<script src="scripts/OBJVertexColorLoader.js" type="text/javascript"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
+<body style='margin : 0px; overflow: hidden;'>
+<a-scene embedded arjs="debugUIEnabled:false;">
+    <a-assets>
+        {% if model_name %}
+        <a-asset-item id="takayama-obj" src="{{ url_for('static', filename='model/takayama.obj') }}"></a-asset-item>
+        <a-asset-item id="takayama-mtl" src="{{ url_for('static', filename='model/takayama.mtl') }}"></a-asset-item>
+        <a-asset-item id="sample_face-obj" src="https://s3-ap-northeast-1.amazonaws.com/pco2699/{{ model_name }}.obj"></a-asset-item>
+        {% endif %}
+    </a-assets>
+    <a-marker preset="hiro">
+        <a-obj-model id="takayama" src="#takayama-obj" mtl="#takayama-mtl" position="0 1 0" scale="0.1 0.1 0.1" rotation="0 -90 0"></a-obj-model>
+        <a-entity id="sample_face" obj-model="obj:#sample_face-obj;" position="0.145 1.8 0" scale="0.0018 0.0018 0.0018" rotation="0 9 180"></a-entity>
+    </a-marker>
+    <a-entity camera></a-entity>
+</a-scene>
+</body>
+</html>
