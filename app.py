@@ -20,6 +20,7 @@ def index():
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
+        print('aaa')
         # Get the file from post request
         f = request.files['file']
 
@@ -30,8 +31,7 @@ def upload():
         f.save(file_path)
 
         # Process your result for human
-        result = 'random'               # Convert to string
-        return result
+        return render_template('setMessage.html')
     return None
 
 
