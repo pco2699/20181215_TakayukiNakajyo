@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Scan Me!</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" id="themesid">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="top" class="header">
+        <div id="disp1" class="text-vertical-center">
+            <h1>Scan Me</h1>
+            <br>
+            <!-- ボタン -->
+            <a href="#about" class="btn btn-dark btn-lg">
+                <label for="uploadFile">
+                    はじめる
+                    <input type="file" id="uploadFile" style="display:none;" name="image" class="img">
+                </label>
+            </a>
+        </div>
+
+        <div id="disp2" class="text-vertical-center" style="display:none;">
+            <div id="imagePreview"></div>
+            <form method="post" action="setMessage.html" enctype="multipart/form-data">
+                <button id="cancelFile" type="button" class="btn btn-secondary">キャンセル</button>
+                <button type="button">
+                    <label for="sendFile" class="btn btn-primary">
+                        送信
+                        <input type="submit" id="sendFile" value="" style="display:none;">
+                    </label>
+                </button>
+            </form>
+        </div>
+    </header>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <hr class="small">
+                    <p class="text-muted">Copyright &copy; Norway's geek</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#uploadFile").on("change", function()
+            {
+                var files = !!this.files ? this.files : [];
+                if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+
+                if (/^image/.test( files[0].type)){ // only image file
+                    var reader = new FileReader(); // instance of the FileReader
+                    reader.readAsDataURL(files[0]); // read the local file
+
+                    reader.onloadend = function(){ // set image data as background of div
+                        $("#imagePreview").css("background-image", "url("+this.result+")");
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        $(function() {
+            $('#uploadFile').on("change",function()
+            {
+                $('#disp1').toggle();
+                $('#disp2').toggle();
+            });
+        });
+        $(function() {
+            $('#cancelFile').on("click",function()
+            {
+                $('#disp2').toggle();
+                $('#disp1').toggle();
+            });
+        });
+    </script>
+</body>
+
+</html>
