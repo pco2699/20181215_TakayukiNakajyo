@@ -58,7 +58,8 @@ def addComment():
 
 @app.route('/message/<name>' ,methods=['GET'])
 def message(name=None):
-    if os.path.isfile(os.path.join('/mnt','s3', 'images', name)):
+    obj_name = name + '.obj'
+    if os.path.isfile(os.path.join('/mnt','s3', 'models', obj_name)):
         render_template('ar/index.html', model_name=name)
     else:
         render_template('ar/index.html')
