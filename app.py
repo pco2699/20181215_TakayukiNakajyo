@@ -53,7 +53,7 @@ def addComment():
     message = request.form['message']
     rand_name = request.form['randname']
     url = rand_name  
-    render_template('shareModel.html', url=url)
+    return render_template('shareModel.html', url=url)
 
 
 @app.route('/message/<name>' ,methods=['GET'])
