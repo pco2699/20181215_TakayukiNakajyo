@@ -30,30 +30,38 @@
 <body>
     <!-- Header -->
     <header id="top" class="header">
-        <div id="disp1" class="text-vertical-center">
-            <h1>Scan Me</h1>
-            <br>
-            <!-- ボタン -->
-            <a href="#about" class="btn btn-dark btn-lg">
-                <label for="uploadFile">
-                    はじめる
-                    <input type="file" id="uploadFile" style="display:none;" name="image" class="img">
-                </label>
-            </a>
-        </div>
+        <form method="post" action="./setMessage.html" enctype="multipart/form-data" class="text-vertical-center">
 
-        <div id="disp2" class="text-vertical-center" style="display:none;">
-            <div id="imagePreview"></div>
-            <form method="post" action="setMessage.html" enctype="multipart/form-data">
-                <button id="cancelFile" type="button" class="btn btn-secondary">キャンセル</button>
-                <button type="button">
-                    <label for="sendFile" class="btn btn-primary">
+            <!-- スタート画面 -->
+            <div id="disp1" >
+                <h1>Scan Me</h1>
+                <br>
+                <!-- ボタン -->
+                <a class="btn btn-dark btn-lg">
+                    <label for="uploadFile">
+                        はじめる
+                        <input type="file" id="uploadFile" style="display:none;" name="image" class="img">
+                    </label>
+                </a>
+            </div>
+
+            <!-- 画像確認画面 -->
+            <div id="disp2" class="text-vertical-center" style="display:none;">
+                <div id="imagePreview" src=""></div>
+                <a class="btn btn-light btn-lg">
+                    <label for="cancelFile">
+                        キャンセル
+                        <input id="cancelFile" type="button" style="display:none;">
+                    </label>
+                </a>
+                <a class="btn btn-dark btn-lg">
+                    <label for="sendFile">
                         送信
                         <input type="submit" id="sendFile" value="" style="display:none;">
                     </label>
-                </button>
-            </form>
-        </div>
+                </a>
+            </div>
+        </form>
     </header>
 
     <!-- Footer -->
@@ -85,6 +93,8 @@
 
                     reader.onloadend = function(){ // set image data as background of div
                         $("#imagePreview").css("background-image", "url("+this.result+")");
+                        // readerのresultプロパティに、データURLとしてエンコードされたファイルデータを格納
+                        $('#imagePreview').attr('src', reader.result );
                     }
                 }
             });

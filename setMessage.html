@@ -35,28 +35,82 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
 
-                <div class="text-center">
-                    <textarea class="form-control box17" cols="40" id="id_message" name="message" placeholder="メッセージを入力してください *" rows="15"></textarea>
-
+                <div class="text-center text-vertical-center">
                     <form method="post" action="shareModel.html" enctype="multipart/form-data">
-                        <a href="#about" class="btn btn-light btn-lg">
-                            <label for="cancelFile">
-                                キャンセル
-                                <input id="cancelFile" type="button" style="display:none;">
-                            </label>
-                        </a>
-                        <a href="#about" class="btn btn-dark btn-lg">
-                            <label for="sendFile">
-                                OK
-                                <input type="submit" id="sendFile" value="" style="display:none;">
-                            </label>
-                        </a>
+
+                        <!-- メッセージ入力画面 -->
+                        <div id="disp1">
+                            <textarea class="form-control box16" cols="40" id="set_message" name="message" placeholder="メッセージを入力してください *" rows="15"></textarea>
+                            <a class="btn btn-light btn-lg">
+                                <label for="backSelectFile">
+                                    戻る
+                                    <input id="backSelectFile" type="button" style="display:none;">
+                                </label>
+                            </a>
+                            <a class="btn btn-dark btn-lg">
+                                <label for="checkMessage">
+                                    Check
+                                    <input type="button" id="checkMessage" value="" style="display:none;">
+                                </label>
+                            </a>
+                        </div>
+
+                        <!-- メッセージ確認画面 -->
+                        <div id="disp2" class="text-vertical-center" style="display:none;">
+                            <textarea class="form-control box17" cols="40" id="check_message" name="message" placeholder="メッセージを入力してください *" rows="15"></textarea>
+                            <a class="btn btn-light btn-lg">
+                                <label for="backSetMessage">
+                                    修正する
+                                    <input id="backSetMessage" type="button" style="display:none;">
+                                </label>
+                            </a>
+                            <a class="btn btn-dark btn-lg">
+                                <label for="sendMessage">
+                                    OK
+                                    <input type="submit" id="sendMessage" value="" style="display:none;">
+                                </label>
+                            </a>
+                        </div>
+
                     </form>
+
                 </div>
 
             </div>
         </div>
     </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+        $(function() {
+            $('#checkMessage').on("click",function()
+            {
+                var str1 = $('#set_message').val();
+                $("#check_message").text(str1);
+                $('#disp1').toggle();
+                $('#disp2').toggle();
+            });
+        });
+
+        $(function() {
+            $('#backSetMessage').on("click",function()
+            {
+                $('#disp1').toggle();
+                $('#disp2').toggle();
+            });
+        });
+
+        $(function() {
+            $('#backSelectFile').on("click",function()
+            {
+                location.href="./index.html";
+            });
+        });
+
+    </script>
 </body>
 
 </html>
