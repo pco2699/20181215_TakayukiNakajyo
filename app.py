@@ -33,7 +33,7 @@ def upload():
         f = request.files['image']
 
         rand_name = generateRand()
-        
+
         filename = rand_name + '.jpg'
 
         sec_filename = secure_filename(filename)
@@ -58,9 +58,9 @@ def addComment():
 
 @app.route('/message/<name>' ,methods=['GET'])
 def message(name=None):
-    if os.path.isfile(os.path.join('mnt','s3', 'images', name)):
+    if os.path.isfile(os.path.join('/mnt','s3', 'images', name)):
         render_template('ar/index.html', model_name=name)
-    else
+    else:
         render_template('ar/index.html')
 
 
