@@ -12,7 +12,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" id="themesid">
 
     <!-- Custom CSS -->
-    <link href="css/stylish-portfolio.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/stylish-portfolio.css') }}" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
@@ -30,7 +30,7 @@
 <body>
     <!-- Header -->
     <header id="top" class="header">
-        <form method="post" action="./setMessage.html" enctype="multipart/form-data" class="text-vertical-center">
+        <form method="post" action="{{ url_for('templates', filename='setMessage.html') }}" enctype="multipart/form-data" class="text-vertical-center">
 
             <!-- スタート画面 -->
             <div id="disp1" >
