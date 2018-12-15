@@ -60,9 +60,9 @@ def addComment():
 def message(name=None):
     obj_name = name + '.obj'
     if os.path.isfile(os.path.join('/mnt','s3', 'models', obj_name)):
-        render_template('ar/index.html', model_name=name)
+        return render_template('ar/index.html', model_name=name)
     else:
-        render_template('ar/index.html')
+        return render_template('ar/index.html')
 
 
 if __name__ == '__main__':
