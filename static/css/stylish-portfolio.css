@@ -35,26 +35,26 @@ body {
 .btn-dark {
     border-radius: 0;
     color: #fff;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(115,199,206,1);
 }
 
 .btn-dark:hover,
 .btn-dark:focus,
 .btn-dark:active {
     color: #fff;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(115,199,206,0.7);
 }
 
 .btn-light {
     border-radius: 0;
-    color: #333;
+    color: #b1b1b1;
     background-color: rgb(255,255,255);
 }
 
 .btn-light:hover,
 .btn-light:focus,
 .btn-light:active {
-    color: #333;
+    color: #b1b1b1;
     background-color: rgba(255,255,255,0.8);
 }
 
@@ -75,11 +75,11 @@ body {
 }
 
 #imagePreview {
-    width: 320px;
-    height: 480px;
+    width: 100vw;
+    height: 82vh;
     background-position: center center;
     background-size: cover;
-    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
+    /*-webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);*/
     display: inline-block;
 }
 
@@ -103,31 +103,74 @@ hr.small {
     -o-background-size: cover;
 }
 
+/* upper */
+.upper1 {
+    height: 85vh;
+}
+
+.upper2 {
+    height: 77vh;
+}
+
+.upper4 {
+    height: 82vh;
+}
+
+/* lower */
+.lower {
+    height: 19vh;
+}
+
 /* Footer */
 
 footer {
-    padding: 100px 0;
-}
-
-/* setMessage */
-.box16{
-    font-size: 1.5em;
-    padding: 0.2em 0.5em;
-    margin: 2em 0;
-}
-
-/* setMessage */
-.box17{
-    font-size: 1.5em;
-    padding: 0.2em 0.5em;
-    margin: 2em 0;
-    background: #d6ebff;
-    box-shadow: 0px 0px 0px 10px #d6ebff;
-    border: dashed 2px white;
-
-}
-
-.box17 p {
-    margin: 0;
     padding: 0;
+}
+
+/* setMessage */
+#set_message {
+    height: 167px;
+    width: 92vw;
+    /* ▼背景画像の指定 */
+    background-image: url("./images/message_box.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding: 2.0em 1.5em;          /* 内側の余白量 */
+    font-size: 1.2em;
+    margin-top: 46px;
+    margin-left: 4vw;
+    line-height: 3;
+    border: 0;
+    color: #555;
+    border: solid 3px #bbb;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+#set_message:before{
+  content: "";
+  position: absolute;
+  bottom: -23px;
+  left: 50%;
+  font-size: 2em;
+  margin-left: -15px;
+  border: 12px solid transparent;
+  border-top: 12px solid #FFF;
+  z-index: 2;
+}
+
+#set_message:after{
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  margin-left: -17px;
+  border: 14px solid transparent;
+  border-top: 14px solid #555;
+  z-index: 1;
+}
+
+#set_message p {
+	margin: 0;
+	padding: 0;
 }
