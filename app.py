@@ -42,24 +42,27 @@ def upload():
         file_path = os.path.join('mnt','s3', 'images', sec_filename)
         f.save(file_path)
 
-        cmd = 'python ../vrn-pytorch/vrn.py ' + rand_name
-        subprocess.Popen(cmd.split())
+        # cmd = 'python ../vrn-pytorch/vrn.py ' + rand_name
+        # subprocess.Popen(cmd.split())
 
         # Process your result for human
-        return render_template('setMessage.html', filename=filename)
+        return render_template('setMessage.html', filename=filename, randname=rand_name)
     return None
 
 @app.route('/addComment', methods=['POST'])
 def addComment():
-    res.render_template('shareModel.html')
+    message = request.form['message']
+    rand_name = request.form['randname']
+    url = rand_name  
+    render_template('shareModel.html', url=url)
 
 
 @app.route('/message/<name>' ,methods=['GET'])
 def message(name=None):
-    if os.path.isfile(os.path.join('mnt','s3', 'images', name) 
-        res.render_template('ar/index.html', model_name=name)
+    if os.path.isfile(os.path.join('mnt','s3', 'images', name)):
+        render_template('ar/index.html', model_name=name)
     else
-        res.render_template('ar/index.html')
+        render_template('ar/index.html')
 
 
 if __name__ == '__main__':
