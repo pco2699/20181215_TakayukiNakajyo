@@ -54,7 +54,7 @@ def upload():
 def addComment():
     message = request.form['message']
     rand_name = request.form['randname']
-    html_file = '/mnt/s3/message/' + rand_name + '.html'
+    html_file = '/mnt/s3/messages/' + rand_name + '.html'
 
     env = Environment(loader=FileSystemLoader('templates'))
     template = env.get_template('ar/index_s3.html')
@@ -62,7 +62,7 @@ def addComment():
     with open(html_file, 'w') as f:
         f.write(output_from_parsed_template)
 
-    url = 'https://s3-ap-northeast-1.amazonaws.com/pco2699/message/' + rand_name + '.html'
+    url = 'https://s3-ap-northeast-1.amazonaws.com/pco2699/messages/' + rand_name + '.html'
     return render_template('shareModel.html', url=url)
 
 
