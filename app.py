@@ -10,6 +10,9 @@ import string
 from flask import Flask, redirect, url_for, request, render_template
 from werkzeug.utils import secure_filename
 from gevent.pywsgi import WSGIServer
+from vrn-pytorch import make_object
+
+import subprocess
 
 # Define a flask app
 app = Flask(__name__)
@@ -30,12 +33,18 @@ def upload():
         # Get the file from post request
         f = request.files['image']
 
-        # 乱数を取得してファイル名にする
-        filename = generateRand()
+        rand_name = generateRand()
 
+        # 乱数を取得してファイル名にする
+        filename = rand_name + '.jpg'
+
+        sec_filename = secure_filename(filename)
         # Save the file to ./uploads
-        file_path = os.path.join('mnt','s3', 'images', secure_filename(filename))
+        file_path = os.path.join('mnt','s3', 'images', sec_filename)
         f.save(file_path)
+
+        cmd = 'python ../vrn-pytorch/vrn.py ' + rand_name
+        subprocess.Popen(cmd.split())
 
         # Process your result for human
         return render_template('setMessage.html', filename=filename)
