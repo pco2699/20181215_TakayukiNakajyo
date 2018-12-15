@@ -11,6 +11,8 @@ from flask import Flask, redirect, url_for, request, render_template
 from werkzeug.utils import secure_filename
 from gevent.pywsgi import WSGIServer
 
+from jinja2 import Environment, FileSystemLoader
+
 import subprocess
 
 # Define a flask app
@@ -41,8 +43,8 @@ def upload():
         file_path = os.path.join('/mnt','s3', 'images', sec_filename)
         f.save(file_path)
 
-        # cmd = 'python ../vrn-pytorch/vrn.py ' + rand_name
-        # subprocess.Popen(cmd.split())
+        cmd = 'python ../vrn-pytorch/vrn.py ' + rand_name
+        subprocess.Popen(cmd.split())
 
         # Process your result for human
         return render_template('setMessage.html', filename=filename, randname=rand_name)
@@ -52,7 +54,15 @@ def upload():
 def addComment():
     message = request.form['message']
     rand_name = request.form['randname']
-    url = rand_name  
+    html_file = '/mnt/s3/message/' + rand_name + '.html'
+
+    env = Environment(loader=FileSystemLoader('templates'))
+    template = env.get_template('ar/index_s3.html')
+    output_from_parsed_template = template.render(model_name=rand_name)
+    with open(html_file, 'w') as f:
+        f.write(output_from_parsed_template)
+
+    url = 'https://s3-ap-northeast-1.amazonaws.com/pco2699/message/' + rand_name + '.html'
     return render_template('shareModel.html', url=url)
 
 
@@ -66,8 +76,6 @@ def message(name=None):
 
 
 if __name__ == '__main__':
-    # app.run(port=5002, debug=True)
-    # Serve the app with gevent
     http_server = WSGIServer(('', 5000), app)
     http_server.serve_forever()
 
