@@ -74555,7 +74555,7 @@ Normalize an attribute string (eg. collapse duplicates)
                             // Exiting VR in embedded mode, no longer need fullscreen styles.
                             if (self.hasAttribute('embedded')) { self.removeFullScreenStyles(); }
                             self.resize();
-                            if (self.isIOS) { utils.forceCanvasResizeSafariMobile(this.canvas); }
+                            // if (self.isIOS) { utils.forceCanvasResizeSafariMobile(this.canvas); }
                             self.emit('exit-vr', {target: self});
                         }
 
@@ -74667,7 +74667,8 @@ Normalize an attribute string (eg. collapse duplicates)
                         // VR mode. The canvas is resized by VREffect following the values returned
                         // by getEyeParameters. We don't want to overwrite the size with the
                         // windows width and height.
-                        if (!camera || !canvas || this.is('vr-mode') && isMobile) { return; }
+                        // if (!camera || !canvas || this.is('vr-mode') && isMobile) { return; }
+                        if (!camera || !canvas || this.is('vr-mode')) { return; }
                         // Update camera.
                         size = getCanvasSize(canvas, embedded);
                         camera.aspect = size.width / size.height;
