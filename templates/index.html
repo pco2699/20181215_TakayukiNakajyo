@@ -35,13 +35,13 @@
             <!-- スタート画面 -->
             <div id="disp1" >
                 <h1 style="display:none;">Scan Me</h1>
-                <img src="{{ url_for('static', filename='images/scanme_font_blue.png') }}" style="width: 60vw;hight:auto; ">
+                <img src="{{ url_for('static', filename='images/scanme_font_blue.png') }}" style="width: 263px;hight:auto;margin-top:-80px">
                 <br>
                 <br>
                 <br>
                 <br>
                 <!-- ボタン -->
-                <a class="btn btn-dark btn-lg">
+                <a class="btn btn-dark btn-lg" style="width: 193px; margin-bottom:-100px;">
                     <label for="uploadFile">
                         写真を選ぶ
                         <input type="file" id="uploadFile" style="display:none;" name="image" class="img">
@@ -55,13 +55,13 @@
                     <div id="imagePreview" src=""></div>
                 </div>
                 <div class="lower">
-                    <a class="btn btn-dark btn-lg" style="width: 50vw;margin: 0;">
+                    <a class="btn btn-dark btn-lg">
                         <label for="sendFile">
                             この写真でOK！
                             <input type="submit" id="sendFile" value="" style="display:none;">
                         </label>
                     </a>
-                    <a class="btn btn-light btn-lg" style="width: 50vw;margin: 0;">
+                    <a class="btn btn-light btn-lg" style="width: 50vw;">
                         <label for="cancelFile">
                             キャンセル
                             <input id="cancelFile" type="button" style="display:none;">

@@ -33,8 +33,12 @@ body {
 /* Custom Button Styles */
 
 .btn-dark {
-    border-radius: 0;
+    font-size: 22px;
+    border-radius: 27px;
+    width: 70vw;
+    height: 54px;
     color: #fff;
+    padding-top: 12px;
     background-color: rgba(115,199,206,1);
 }
 
@@ -46,6 +50,7 @@ body {
 }
 
 .btn-light {
+    font-size: 22px;
     border-radius: 0;
     color: #b1b1b1;
     background-color: rgb(255,255,255);
@@ -109,11 +114,11 @@ hr.small {
 }
 
 .upper2 {
-    height: 77vh;
+    height: 71vh;
 }
 
 .upper4 {
-    height: 82vh;
+    height: 75vh;
 }
 
 /* lower */
@@ -142,7 +147,7 @@ footer {
     line-height: 3;
     border: 0;
     color: #555;
-    border: solid 3px #bbb;
+    border: solid 3px #b7b7b7;
     box-sizing: border-box;
     border-radius: 20px;
 }

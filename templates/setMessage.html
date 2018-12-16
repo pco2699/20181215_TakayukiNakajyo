@@ -36,23 +36,24 @@
             <div>
 
                 <div class="text-center text-vertical-center">
-                    <form method="post" action="/addComment">
+                    <form method="post" action="./addComment">
 
                         <!-- メッセージ入力画面 -->
                         <div id="disp1" style="min-height: 100vh;">
                             <div class="upper2">
                                 <textarea class="form-control" cols="20" id="set_message" name="message" placeholder="メッセージを入力してください *" rows="5"></textarea>
-                                <img src="./static/images/SCANME.gif" style="width: 32vw;hight:auto;padding-top: 7.5em; ">
+                                <img src="./static/images/SCANME.gif" style="width: 32vw;hight:auto;padding-top: 6.5em;">
                             </div>
                             <div class="lower">
                                 <footer class="fixed-bottom">
-                                    <a class="btn btn-dark btn-lg" style="width: 50vw;margin: 0;">
+                                    <a class="btn btn-dark btn-lg" style="margin: 0;">
                                         <label for="sendMessage">
                                             決定
+                                            <input type="hidden" value={{ randname }}>
                                             <input type="submit" id="sendMessage" value="" style="display:none;">
                                         </label>
                                     </a>
-                                    <a class="btn btn-light btn-lg" style="width: 50vw;margin-top: 3px;">
+                                    <a class="btn btn-light btn-lg" style="width: 50vw;margin-top: 5px;">
                                         <label for="backSelectFile">
                                             戻る
                                             <input id="backSelectFile" type="button" style="display:none;">
