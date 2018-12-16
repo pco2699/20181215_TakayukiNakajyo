@@ -62011,6 +62011,7 @@ Normalize an attribute string (eg. collapse duplicates)
 
 // Recalculates this device's parameters based on the DPDB.
         Dpdb.prototype.recalculateDeviceParams_ = function() {
+            return null;
             var newDeviceParams = this.calcDeviceParams_();
             if (newDeviceParams) {
                 this.deviceParams = newDeviceParams;
