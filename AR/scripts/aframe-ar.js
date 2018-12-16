@@ -4201,6 +4201,7 @@ THREE.WebAR.createVRSeeThroughCamera = function(vrDisplay, near, far) {
  */
 THREE.WebAR.resizeVRSeeThroughCamera = function(vrDisplay, camera) {
     camera.aspect = window.innerWidth / window.innerHeight;
+    camera.aspect = 4 / 3;
     if (vrDisplay) {
         var windowWidthBiggerThanHeight = window.innerWidth > window.innerHeight;
         var seeThroughCamera = vrDisplay.getSeeThroughCamera();
@@ -4458,6 +4459,7 @@ THREEx.ARClickability.prototype.onResize = function(){
     var fullWidth = parseInt(sourceElement.style.width)
     var fullHeight = parseInt(sourceElement.style.height)
     cameraPicking.aspect = fullWidth / fullHeight;
+    cameraPicking.aspect = 4 / 3;
     cameraPicking.updateProjectionMatrix();
 }
 
@@ -6218,6 +6220,7 @@ ARjs.Source.prototype.onResize	= function(arToolkitContext, renderer, camera){
         }
     }else if( trackingBackend === 'aruco' ){
         camera.aspect = renderer.domElement.width / renderer.domElement.height;
+        camera.aspect = 4 / 3;
         camera.updateProjectionMatrix();
     }else if( trackingBackend === 'tango' ){
         var vrDisplay = arToolkitContext._tangoContext.vrDisplay
@@ -6411,6 +6414,7 @@ THREEx.HitTestingPlane.prototype.onResize = function(){
     var fullWidth = parseInt(sourceElement.style.width)
     var fullHeight = parseInt(sourceElement.style.height)
     pickingCamera.aspect = fullWidth / fullHeight
+    pickingCamera.aspect = 4 / 3
 
     pickingCamera.updateProjectionMatrix()
 }
