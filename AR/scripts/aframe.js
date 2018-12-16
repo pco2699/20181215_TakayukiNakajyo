@@ -74504,7 +74504,8 @@ Normalize an attribute string (eg. collapse duplicates)
                             // TODO: 07/16 Chromium builds break when `requestFullscreen`ing on a canvas
                             // that we are also `requestPresent`ing. Until then, don't fullscreen if headset
                             // connected.
-                            if (!self.isMobile && !self.checkHeadsetConnected()) {
+                            // if (!self.isMobile && !self.checkHeadsetConnected()) {
+                            if (!self.checkHeadsetConnected()) {
                                 requestFullscreen(self.canvas);
                             }
                             self.resize();
@@ -75026,7 +75027,7 @@ Normalize an attribute string (eg. collapse duplicates)
         var Wakelock = _dereq_('../../../vendor/wakelock/wakelock');
 
         module.exports = function initWakelock (scene) {
-            if (!scene.isMobile) { return; }
+            // if (!scene.isMobile) { return; }
 
             var wakelock = scene.wakelock = new Wakelock();
             scene.addEventListener('enter-vr', function () { wakelock.request(); });
@@ -78323,7 +78324,7 @@ Normalize an attribute string (eg. collapse duplicates)
              */
             function checkHasPositionalTracking () {
                 var vrDisplay = controls.getVRDisplay();
-                if (isMobile() || isGearVR()) { return false; }
+                // if (isMobile() || isGearVR()) { return false; }
                 return vrDisplay && vrDisplay.capabilities.hasPosition;
             }
             module.exports.checkHasPositionalTracking = checkHasPositionalTracking;
