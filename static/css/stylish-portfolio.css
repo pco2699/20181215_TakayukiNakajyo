@@ -137,7 +137,7 @@ footer {
     height: 167px;
     width: 92vw;
     /* ▼背景画像の指定 */
-    background-image: url("./images/message_box.png");
+    background-image: url("../images/message_box.png");
     background-repeat: no-repeat;
     background-position: top center;
     padding: 2.0em 1.5em;          /* 内側の余白量 */
