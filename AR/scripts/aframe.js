@@ -62011,7 +62011,6 @@ Normalize an attribute string (eg. collapse duplicates)
 
 // Recalculates this device's parameters based on the DPDB.
         Dpdb.prototype.recalculateDeviceParams_ = function() {
-            return null;
             var newDeviceParams = this.calcDeviceParams_();
             if (newDeviceParams) {
                 this.deviceParams = newDeviceParams;
@@ -63731,20 +63730,20 @@ Normalize an attribute string (eg. collapse duplicates)
             //  from hell's heart I stab at thee;
             //  for hate's sake I spit my last breath at thee."
             // -- Moby Dick, by Herman Melville
-            if (Util.isIOS()) {
-                var width = canvas.style.width;
-                var height = canvas.style.height;
-                canvas.style.width = (parseInt(width) + 1) + 'px';
-                canvas.style.height = (parseInt(height)) + 'px';
-                setTimeout(function() {
-                    canvas.style.width = width;
-                    canvas.style.height = height;
-                }, 100);
-            }
-
-            // Debug only.
-            window.Util = Util;
-            window.canvas = canvas;
+            // if (Util.isIOS()) {
+            //     var width = canvas.style.width;
+            //     var height = canvas.style.height;
+            //     canvas.style.width = (parseInt(width) + 1) + 'px';
+            //     canvas.style.height = (parseInt(height)) + 'px';
+            //     setTimeout(function() {
+            //         canvas.style.width = width;
+            //         canvas.style.height = height;
+            //     }, 100);
+            // }
+            //
+            // // Debug only.
+            // window.Util = Util;
+            // window.canvas = canvas;
         };
 
         Util.isDebug = function() {
