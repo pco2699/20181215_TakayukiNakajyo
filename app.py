@@ -58,7 +58,7 @@ def addComment():
 
     env = Environment(loader=FileSystemLoader('templates'))
     template = env.get_template('ar/index_s3.html')
-    output_from_parsed_template = template.render(model_name=rand_name)
+    output_from_parsed_template = template.render(model_name=rand_name, message=message)
     with open(html_file, 'w') as f:
         f.write(output_from_parsed_template)
 
