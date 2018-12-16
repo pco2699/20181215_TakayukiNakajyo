@@ -6271,6 +6271,7 @@ THREEx.ArVideoInWebgl = function(videoTexture){
         var elementHeight = parseFloat( arToolkitSource.domElement.style.height.replace(/px$/,''), 10 )
 
         var aspect = elementWidth / elementHeight
+        var aspect = 4 / 3
 
         // camera.fov = fov
         // if( vrDisplay.isPresenting ){
