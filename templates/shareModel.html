@@ -32,13 +32,18 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <div class="upper4">
-                    <div id="imagePreview"></div>
+                    <div id="markerView">
+                        <img src="{{ url_for('static', filename='images/marker3.png') }}" style="width:270px;margin:83px 53px;">
+                    </div>
+                    <div id="urlBox" style="margin:-30px 54px 0 54px;border-bottom: 1px solid #eee;width:70vw;">
+                        <a class="textLine">{{ url }}</a>
+                    </div>
                 </div>
-                <div class="lower">
+                <div class="lower" style="margin-top:-30px;">
                     <footer class="fixed-bottom">
                         <div class="text-center">
-                            <a href="{{ url }}" class="btn btn-dark btn-lg" >URLをコピー</a><br><br>
-                            <a href="./" class="btn btn-light btn-lg" style="width: 50vw;">最初に戻る</a>
+                            <a href="{{ url }}" class="btn btn-dark btn-lg">URLをコピー</a><br><br>
+                            <a href="./index.html" class="btn btn-light btn-lg" style="width: 50vw;">最初に戻る</a>
                         </div>
                     </footer>
                 </div>
