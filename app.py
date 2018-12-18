@@ -1,5 +1,5 @@
 from __future__ import division, print_function
-# coding=utf-8
+# coding: utf-8
 import sys
 import os
 
@@ -12,6 +12,8 @@ from werkzeug.utils import secure_filename
 from gevent.pywsgi import WSGIServer
 
 from jinja2 import Environment, FileSystemLoader
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 import subprocess
 
@@ -40,7 +42,7 @@ def upload():
 
         sec_filename = secure_filename(filename)
         # Save the file to ./uploads
-        file_path = os.path.join('/mnt','s3', 'images', sec_filename)
+        file_path = os.path.join('/images', sec_filename)
         f.save(file_path)
 
         cmd = 'python ../vrn-pytorch/vrn.py ' + rand_name
@@ -54,28 +56,16 @@ def upload():
 def addComment():
     message = request.form['message']
     rand_name = request.form['randname']
-    html_file = '/mnt/s3/messages/' + rand_name + '.html'
 
-    env = Environment(loader=FileSystemLoader('templates'))
-    template = env.get_template('ar/index_s3.html')
-    output_from_parsed_template = template.render(model_name=rand_name, message=message)
-    with open(html_file, 'w') as f:
-        f.write(output_from_parsed_template)
-
-    url = 'https://s3-ap-northeast-1.amazonaws.com/pco2699/messages/' + rand_name + '.html'
+    url = 'https://scanme.tokyo/message/' + rand_name 
     return render_template('shareModel.html', url=url)
 
 
 @app.route('/message/<name>' ,methods=['GET'])
 def message(name=None):
     obj_name = name + '.obj'
-    if os.path.isfile(os.path.join('/mnt','s3', 'models', obj_name)):
-        return render_template('ar/index.html', model_name=name)
-    else:
-        return render_template('ar/index.html')
+    return render_template('ar/index.html', model_name=name)
 
 
 if __name__ == '__main__':
-    http_server = WSGIServer(('', 5000), app)
-    http_server.serve_forever()
-
+    app.run() 
