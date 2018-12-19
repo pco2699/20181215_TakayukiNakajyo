@@ -16,7 +16,7 @@
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,16 +42,16 @@
                         <div id="disp1" style="min-height: 100vh;">
                             <div class="upper2">
                                 <textarea class="form-control" cols="20" id="set_message" name="message" placeholder="メッセージを入力してください *" rows="5"></textarea>
-                                <img src="./static/images/SCANME.gif" style="width: 32vw;hight:auto;padding-top: 6.5em;">
+                                <img src="{{ url_for('static', filename='images/scanme_icon_blue.png') }}" style="width: 32vw;height:auto;padding-top: 6.5em;">
                             </div>
                             <div class="lower">
                                 <footer class="fixed-bottom">
                                     <a class="btn btn-dark btn-lg" style="margin: 0;">
                                         <label for="sendMessage">
                                             決定
-                                            <input type="hidden" name="randname" value="{{ randname }}">
                                             <input type="submit" id="sendMessage" value="" style="display:none;">
                                         </label>
+                                        <input type="hidden" name="randname" value="{{ randname }}">
                                     </a>
                                     <a class="btn btn-light btn-lg" style="width: 50vw;margin-top: 5px;">
                                         <label for="backSelectFile">
@@ -62,9 +62,7 @@
                                 </footer>
                             </div>
                         </div>
-
                     </form>
-
                 </div>
             </div>
         </div>
@@ -74,11 +72,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script>
+    <script type="text/javascript">
         $(function() {
             $('#backSelectFile').on("click",function()
             {
-                location.href="./index.html";
+                location.href="./";
             });
         });
     </script>

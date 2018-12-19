@@ -16,7 +16,7 @@
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,18 +35,14 @@
             <!-- スタート画面 -->
             <div id="disp1" >
                 <h1 style="display:none;">Scan Me</h1>
-                <img src="{{ url_for('static', filename='images/scanme_font_blue.png') }}" style="width: 263px;hight:auto;margin-top:-80px">
+                <img src="{{ url_for('static', filename='images/scanme_font_blue.png') }}" style="width: 263px;height:auto;margin-top:-80px">
                 <br>
                 <br>
                 <br>
                 <br>
                 <!-- ボタン -->
-                <a class="btn btn-dark btn-lg" style="width: 193px; margin-bottom:-100px;">
-                    <label for="uploadFile">
-                        写真を選ぶ
-                        <input type="file" id="uploadFile" style="display:none;" name="image" class="img">
-                    </label>
-                </a>
+                <input type="file" id="uploadFile" style="display:none;" name="image" class="img">
+                <button lass="btn btn-dark btn-lg" style="width: 193px; margin-bottom:-100px;" onclick="$('#uploadFile').click()">写真を選ぶ</button>
             </div>
 
             <!-- 画像確認画面 -->
@@ -105,18 +101,10 @@
                        //  $('#imagePreview').attr('src', reader.result );
                     }
                 }
-            });
-        });
-    </script>
-    <script>
-        $(function() {
-            $('#uploadFile').on("change",function()
-            {
                 $('#disp1').toggle();
                 $('#disp2').toggle();
+
             });
-        });
-        $(function() {
             $('#cancelFile').on("click",function()
             {
                 $('#disp2').toggle();
