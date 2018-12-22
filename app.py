@@ -46,7 +46,7 @@ def upload():
         file_path = os.path.join('/images', sec_filename)
         f.save(file_path)
 
-        cmd = 'python ../vrn-pytorch/vrn.py ' + rand_name
+        cmd = 'python /home/ec2-user/vrn-pytorch/vrn.py ' + rand_name
         subprocess.Popen(cmd.split())
 
         # Process your result for human
