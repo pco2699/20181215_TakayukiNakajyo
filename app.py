@@ -41,13 +41,13 @@ def upload():
 
         filename = rand_name + '.jpg'
         #
-        # sec_filename = secure_filename(filename)
-        # # Save the file to ./uploads
-        # file_path = os.path.join('/images', sec_filename)
-        # f.save(file_path)
-        #
-        # cmd = 'python ../vrn-pytorch/vrn.py ' + rand_name
-        # subprocess.Popen(cmd.split())
+        sec_filename = secure_filename(filename)
+        # Save the file to ./uploads
+        file_path = os.path.join('/images', sec_filename)
+        f.save(file_path)
+
+        cmd = 'python ../vrn-pytorch/vrn.py ' + rand_name
+        subprocess.Popen(cmd.split())
 
         # Process your result for human
         return render_template('setMessage.html', filename=filename, randname=rand_name)
