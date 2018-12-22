@@ -47,7 +47,7 @@ def upload():
         f.save(file_path)
 
         cmd = 'python /home/ec2-user/vrn-pytorch/vrn.py ' + rand_name
-        subprocess.Popen(cmd.split())
+        subprocess.Popen(cmd.split(), shell=True)
 
         # Process your result for human
         return render_template('setMessage.html', filename=filename, randname=rand_name)
