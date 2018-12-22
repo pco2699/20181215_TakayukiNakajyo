@@ -34,13 +34,13 @@ def upload():
         # Get the file from post request
         f = request.files['image']
 
+        rand_name = generate_rand()
         while():
-            rand_name = generate_rand()
             if not os.path.exists(os.path.join('/text', rand_name)):
                 break
+            rand_name = generate_rand()
 
         filename = rand_name + '.jpg'
-        #
         sec_filename = secure_filename(filename)
         # Save the file to ./uploads
         file_path = os.path.join('/images', sec_filename)
