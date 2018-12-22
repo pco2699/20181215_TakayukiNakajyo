@@ -69,18 +69,18 @@ def add_comment():
 @app.route('/message/<name>', methods=['GET'])
 def message(name=None):
     if name is not None:
-        # パスの作成
-        message_path = os.path.join('/text', name)
-        if not os.path.exists(message_path):
-            abort(404)
-
-        # メッセージの読み込み
-        with open(message_path, 'r') as f:
-            message = f.read()
+        # # パスの作成
+        # message_path = os.path.join('/text', name)
+        # if not os.path.exists(message_path):
+        #     abort(404)
+        #
+        # # メッセージの読み込み
+        # with open(message_path, 'r') as f:
+        #     message = f.read()
 
         # s3にモデルがあるか確認
-        current_path = os.path.dirname(os.path.abspath(__file__))
-        path = os.path.join(current_path, '../s3', name + '.obj')
+        current_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        path = os.path.join(current_path, 's3', 'models', name + '.obj')
         print(path)
 
         if os.path.isfile(path):
