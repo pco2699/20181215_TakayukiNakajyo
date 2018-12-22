@@ -75,8 +75,8 @@ def message(name=None):
             abort(404)
 
         # メッセージの読み込み
-        with open(message_path, 'w') as f:
-            message = f.readline()
+        with open(message_path, 'r') as f:
+            message = f.read()
 
         # s3にモデルがあるか確認
         current_path = os.path.dirname(os.path.abspath(__file__))
