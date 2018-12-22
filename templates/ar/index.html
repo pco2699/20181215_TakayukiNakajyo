@@ -8,12 +8,17 @@
      <a-assets> 
         <a-asset-item id="takayama-obj" src="{{ url_for('static', filename='model/takayama.obj') }}"></a-asset-item> 
         <a-asset-item id="takayama-mtl" src="{{ url_for('static', filename='model/takayama.mtl') }}"></a-asset-item>
-        <a-asset-item id="sample_face-obj" src="https://s3-ap-northeast-1.amazonaws.com/pco2699/models/{{ model_name }}.obj"></a-asset-item> 
+        <a-asset-item id="sample_face-obj" src="https://s3-ap-northeast-1.amazonaws.com/pco2699/models/{{ model_name }}.obj"></a-asset-item>
+        <a-asset-item id="font" src="{{url_for('static', filename='/fonts/BokutachinoGothic2Bold_Regular.json')}}"></a-asset-item>
     </a-assets> 
     <a-marker preset="hiro"> 
         <a-obj-model id="takayama" src="#takayama-obj" mtl="#takayama-mtl" position="0 1 0" scale="0.1 0.1 0.1" rotation="0 -90 0"></a-obj-model> 
-        <a-entity id="sample_face" obj-model="obj:#sample_face-obj;" position="-0.25 1.9 -0.07" scale="0.0025 0.0025 0.0025" rotation="0 0 -90"></a-entity> 
-        <a-text value="{{ message }}" position="0 2.15 0" align="center"></a-text> 
+        <a-entity id="sample_face" obj-model="obj:#sample_face-obj;" position="-0.25 1.9 -0.07" scale="0.0025 0.0025 0.0025" rotation="0 0 -90"></a-entity>
+        <a-entity
+	        text-geometry="{{ message }}; font: #font; size: .15;"
+	        material="color: white"
+	        position="0 2.15 0">
+        </a-entity>
     </a-marker> 
     <a-entity camera></a-entity> 
 </a-scene>
