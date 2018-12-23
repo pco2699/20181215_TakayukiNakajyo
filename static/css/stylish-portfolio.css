@@ -114,7 +114,7 @@ footer {
 
 #imagePreview {
     width: 100vw;
-    height: 82vh;
+    height: 50vh;
     background-position: center center;
     background-size: cover;
     /*-webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);*/
@@ -143,7 +143,8 @@ hr.small {
 
 /* upper */
 .upper1 {
-    height: 55vh;
+
+    height: 50vh;
 }
 
 .upper2 {
