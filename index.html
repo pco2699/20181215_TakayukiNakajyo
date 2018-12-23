@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Scan Me | お手軽3Dモデリングアプリ </title>
+    <title>ScanMe | お手軽3Dモデリングアプリ </title>
     <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" id="themesid">
     <!-- Custom CSS -->
@@ -27,19 +27,23 @@
       <form method="post" action="./setMessage.html" enctype="multipart/form-data" class="text-vertical-center">
         <!-- スタート画面 -->
         <div id="disp1" >
-            <h1 style="display:none;">Scan Me</h1>
-            <img src="./static/images/scanmeXmas_headerlogo.png" style="width: 263px;hight:auto;margin-top:-80px">
-            <br>
-            <br>
-            <br>
-            <br>
-            <!-- ボタン -->
-            <a class="btn btn-dark btn-lg" style="width: 193px; margin-bottom:-100px;">
-                <label for="uploadFile" >
-                    写真を選ぼう
-                    <input type="file" id="uploadFile" style="display:none;" name="image" class="img">
-                </label>
-            </a>
+          <h1 style="display:none;">Scan Me</h1>
+          <img src="./static/images/scanmeXmas_headerlogo.png" class="mainlogo">
+          <br />
+          <!-- choose pic btn -->
+          <a class="btn btn-dark btn-lg btn-block top-btn">
+              <label for="uploadFile" >
+                  写真を選ぼう
+                  <input type="file" id="uploadFile" style="display:none;" name="image" class="img">
+              </label>
+          </a>
+          <!-- how to use btn -->
+          <a class="btn btn-dark btn-lg btn-block top-btn">
+              <label for="uploadFile" >
+                  遊び方
+                  <input type="file" id="uploadFile" style="display:none;" name="image" class="img">
+              </label>
+          </a>
         </div>
         <!-- 画像確認画面 -->
         <div id="disp2" class="text-vertical-center" style="display:none;">
@@ -66,10 +70,6 @@
     <footer class="footer">
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1 text-center">
-                <hr class="small">
-                <!--
-                <p class="text-muted">Copyright &copy; Norway's geek</p>
-                -->
                 <p class="footer-comment">Merry Christmas!<br/>by Norway no Geek</p>
             </div>
         </div>
