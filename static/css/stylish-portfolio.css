@@ -179,3 +179,17 @@ footer {
 	margin: 0;
 	padding: 0;
 }
+
+#message {
+    position: absolute;
+    width: 1600px;
+    height: 500px;
+    background-color: #FFF;
+    z-index: -100;
+}
+
+#element {
+  color: #000;
+  font-size: 100px;
+  text-align: center;
+}

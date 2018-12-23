@@ -96,6 +96,11 @@ def favicon():
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
+@app.route('/test')
+def test():
+    return render_template('ar/index.html', model_name='9bU6b', message='メリークリスマス')
+
+
 if __name__ == '__main__':
     debug = bool(os.environ['DEBUG'])
     app.run(debug=debug)
