@@ -221,3 +221,12 @@ hr.small {
   font-size: 100px;
   text-align: center;
 }
+
+/* gif Style */
+.wait-gif {
+  width: 50%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+}

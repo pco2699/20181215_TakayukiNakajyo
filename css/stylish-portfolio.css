@@ -196,3 +196,12 @@ hr.small {
   margin-left: 15%;
   margin-bottom: 5%;
 }
+
+/* gif Style */
+.wait-gif {
+  width: 50%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
