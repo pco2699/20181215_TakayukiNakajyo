@@ -126,24 +126,9 @@ hr.small {
   -o-background-size: cover;
 }
 
-/* upper */
-.upper1 {
-  height: 50vh;
-}
-
-.upper2 {
-  height: 71vh;
-}
-
 .upper4 {
   height: 75vh;
 }
-
-/* lower */
-.lower {
-  height: 19vh;
-}
-
 
 
 .footer-comment{
