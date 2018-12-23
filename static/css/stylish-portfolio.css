@@ -9,12 +9,23 @@
 
 html,
 body {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 95%;
+  /* Christmas color */
+  background-color: #A5022D;
 }
 
 body {
-    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+footer {
+  width: 100%;
+  height: 5%;
+}
+
+.footer-comment {
+  color: #F9D27D;
 }
 
 .text-vertical-center {
@@ -30,37 +41,58 @@ body {
     font-weight: 700;
 }
 
-/* Custom Button Styles */
+/* Main Logo Styles */
+.mainlogo {
+  width: 263px;
+  height: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
 
+/* Custom Button Styles */
 .btn-dark {
-    font-size: 22px;
-    border-radius: 27px;
-    width: 70vw;
-    height: 54px;
-    color: #fff;
-    padding-top: 12px;
-    background-color: rgba(115,199,206,1);
+  font-size: 22px;
+  border-radius: 27px;
+  width: 70vw;
+  height: 54px;
+  color: #fff;
+  padding-top: 12px;
+  /* Christmas color */
+  background-color: #064238;
 }
 
 .btn-dark:hover,
 .btn-dark:focus,
 .btn-dark:active {
-    color: #fff;
-    background-color: rgba(115,199,206,0.7);
+  color: #A5022D;
+  /* Christmas color */
+  background-color: #FFEAB2;
 }
 
 .btn-light {
-    font-size: 22px;
-    border-radius: 0;
-    color: #b1b1b1;
-    background-color: rgb(255,255,255);
+  font-size: 22px;
+  border-radius: 27px;
+  width: 70vw;
+  height: 54px;
+  color: #fff;
+  padding-top: 12px;
+  /* Christmas color */
+  background-color: #064238;
 }
 
 .btn-light:hover,
 .btn-light:focus,
 .btn-light:active {
-    color: #b1b1b1;
-    background-color: rgba(255,255,255,0.8);
+  color: #b1b1b1;
+  background-color: rgba(255,255,255,0.8);
+}
+
+/* index,html btn Styles */
+.top-btn {
+  margin-top: 5%;
+  margin-right: 15%;
+  margin-left: 15%;
+  margin-bottom: 5%;
 }
 
 /*中身を非表示にしておく*/
@@ -124,12 +156,6 @@ hr.small {
 /* lower */
 .lower {
     height: 19vh;
-}
-
-/* Footer */
-
-footer {
-    padding: 0;
 }
 
 /* setMessage */
