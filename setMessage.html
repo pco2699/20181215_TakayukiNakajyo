@@ -30,22 +30,23 @@
             <textarea class="form-control" cols="20" id="set_message" name="message" placeholder="メッセージを入力してください *" rows="5"></textarea>
             <img src="./static/images/scanmeX_wait.gif" class="wait-gif">
         </div>
+        <!-- Button Area -->
+        <div class="button-menu">
+          <a class="btn btn-dark btn-lg top-btn">
+            <label for="sendMessage">
+            モデルを生成する
+            <input type="submit" id="sendMessage" value="" style="display:none;">
+            </label>
+          </a>
+          <a class="btn btn-light btn-lg bottom-btn">
+            <label for="backSelectFile">
+            戻る
+            <input id="backSelectFile" type="button" style="display:none;">
+            </label>
+          </a>
+        </div>      
       </form>
     </div>
-  </div>
-  <div class="button-menu">
-    <a class="btn btn-dark btn-lg top-btn">
-      <label for="sendMessage">
-      モデルを生成する
-      <input type="submit" id="sendMessage" value="" style="display:none;">
-      </label>
-    </a>
-    <a class="btn btn-light btn-lg bottom-btn">
-      <label for="backSelectFile">
-      戻る
-      <input id="backSelectFile" type="button" style="display:none;">
-      </label>
-    </a>
   </div>
   <footer class="footer">
     <p class="footer-comment">Merry Christmas!<br/>by Norway no Geek</p>
