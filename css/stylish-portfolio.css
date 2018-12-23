@@ -83,6 +83,25 @@ footer {
   background-color: rgba(255,255,255,0.8);
 }
 
+.btn-light2 {
+  font-size: 22px;
+  border-radius: 10px;
+  width: 70vw;
+  height: 54px;
+  color: #fff;
+  padding-top: 12px;
+  /* Christmas color */
+  background-color: #1b95e0;
+}
+
+.btn-light:hover,
+.btn-light:focus,
+.btn-light:active {
+  color: ##1b95e0;
+  background-color: #fff;
+}
+
+
 /*中身を非表示にしておく*/
 .hidden_box .hidden_show {
   height: 0;
@@ -196,6 +215,7 @@ hr.small {
   margin-left: 15%;
   margin-bottom: 5%;
 }
+
 
 /* gif Style */
 .wait-gif {
