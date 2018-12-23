@@ -10,7 +10,7 @@
     <div id="message">
         <p id="element">{{ message }}</p>
     </div>
-    <a-scene embedded arjs="trackingMethod:best;" vr-mode-ui="enabled: false">
+    <a-scene embedded arjs="debugUIEnabled:false;trackingMethod:best;" vr-mode-ui="enabled: false">
      <a-assets> 
         <a-asset-item id="takayama-obj" src="{{ url_for('static', filename='model/takayama.obj') }}"></a-asset-item> 
         <a-asset-item id="takayama-mtl" src="{{ url_for('static', filename='model/takayama.mtl') }}"></a-asset-item>
