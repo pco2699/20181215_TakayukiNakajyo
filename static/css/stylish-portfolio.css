@@ -53,7 +53,7 @@ footer {
 /* Custom Button Styles */
 .btn-dark {
   font-size: 22px;
-  border-radius: 27px;
+  border-radius: 10px;
   width: 70vw;
   height: 54px;
   color: #fff;
@@ -72,13 +72,13 @@ footer {
 
 .btn-light {
   font-size: 22px;
-  border-radius: 27px;
+  border-radius: 10px;
   width: 70vw;
   height: 54px;
-  color: #fff;
+  color: #064238;
   padding-top: 12px;
   /* Christmas color */
-  background-color: #064238;
+  background-color: #fff;
 }
 
 .btn-light:hover,
