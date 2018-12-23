@@ -11,6 +11,7 @@ html,
 body {
     width: 100%;
     height: 100%;
+    background-color: #A5022D;
 }
 
 body {
@@ -39,7 +40,7 @@ body {
     height: 54px;
     color: #fff;
     padding-top: 12px;
-    background-color: rgba(115,199,206,1);
+    background-color: #064238;
 }
 
 .btn-dark:hover,
@@ -130,6 +131,10 @@ hr.small {
 
 footer {
     padding: 0;
+}
+
+.footer-comment{
+  color: #F9D27D;
 }
 
 /* setMessage */
