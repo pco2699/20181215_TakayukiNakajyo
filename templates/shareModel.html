@@ -35,8 +35,8 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <div class="upper4">
-                    <div id="markerView">
-                        <img src="{{ url_for('static', filename='images/marker3.png') }}" style="width:270px;margin:83px 53px;">
+                    <div id="markerView" style="text-align: center;">
+                        <img src="{{ url_for('static', filename='images/arImage.png') }}" style="width: 35%; margin-bottom: 10%; margin-top: 10%; margin-left: 20%; margin-right: 20%;">
                     </div>
                     <div id="urlBox" style="margin:-30px 54px 0 54px;border-bottom: 1px solid #eee;width:70vw;">
                         <a class="textLine" id="shareUrl">{{ url }}</a>
@@ -45,7 +45,9 @@
                 <div>
                   <div class="text-center">
                       <button type="button" data-clipboard-target="#shareUrl" class="btn btn-dark btn-lg btn-block top-btn">URLをコピー</button>
-                      <a href="./" class="btn btn-light btn-lg btn-block bottom-btn">最初に戻る</a>
+                      <button type="button" class="btn btn-dark btn-lg btn-block bottom-btn"  onclick="location.href='/qrcode'">
+                          QRコードを表示
+                      </button>
                   </div>
                 </div>
                 <!-- Twitter Share Button START -->
