@@ -42,7 +42,7 @@
                 </div>
                 <div>
                     <div class="text-center">
-                        <button type="button" data-clipboard-target="#shareUrl" class="btn btn-dark btn-lg btn-block top-btn" id="urlCopy">URLをコピー</button>
+                        <button type="button" data-clipboard-text="#shareUrl" class="btn btn-dark btn-lg btn-block top-btn" id="urlCopy">URLをコピー</button>
                         <textarea id="shareUrl" style="display:none;">{{ url }}</textarea>
                         <button type="button" class="btn btn-dark btn-lg btn-block bottom-btn"  onclick="location.href='/qrcode'">
                             QRコードを表示
@@ -62,8 +62,8 @@
       $(function () {
         const clipboard = new Clipboard('.btn', {
             text: function(trigger) {
-                const targetSelector = trigger.getAttribute("data-clipboard-target");
-                return $(targetSelector).val();
+                const textSelector = trigger.getAttribute("data-clipboard-text");
+                return $(textSelector).val();
             }
         });
         clipboard.on('success', (e) => {
