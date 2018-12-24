@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <title>ScanMe_メッセージ</title>
+    <title>ScanMe | メッセージを送ろう！</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" id="themesid">
@@ -29,48 +29,33 @@
 </head>
 
 <body>
-    <header>
-
-    </header>
-    <div class="container">
-        <div class="row">
-            <div>
-
-                <div class="text-center text-vertical-center">
-                    <form method="post" action="./addComment">
-
-                        <!-- メッセージ入力画面 -->
-                        <div id="disp1" style="min-height: 100vh;">
-                            <div class="upper2">
-                                <textarea class="form-control" cols="20" id="set_message" name="message" placeholder="メッセージを入力してください *" rows="5" maxlength="20"></textarea>
-                                <img src="{{ url_for('static', filename='images/SCANME.gif') }}" style="width: 32vw;height:auto;padding-top: 6.5em;">
-                            </div>
-                            <div class="lower">
-                                <footer class="fixed-bottom">
-                                    <button class="btn btn-dark btn-lg" style="margin: 0;" type="submit" id="sendMessage" value="">決定</button>
-                                    <input type="hidden" name="randname" value="{{ randname }}">
-                                    <button class="btn btn-light btn-lg" id="backSelectFile" type="button">戻る</button>
-                                </footer>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <!-- CONTENT START -->
+    <div class="message-area">
+      <div class="text-center text-vertical-center">
+        <form method="post" action="./addComment">
+          <!-- メッセージ入力画面 -->
+          <div>
+              <textarea class="form-control" cols="20" id="set_message" name="message" placeholder="メッセージを入力してください *" rows="5" maxlength="20"></textarea>
+              <img src="{{ url_for('static', filename='images/scanmeX_wait.gif') }}" class="wait-gif">
+          </div>
+          <!-- CONTENT START -->
+          <div class="button-menu">
+            <button class="btn btn-dark btn-lg btn-block top-btn" type="submit" id="sendMessage" value="">モデル作成</button>
+            <input type="hidden" name="randname" value="{{ randname }}">
+            <button class="btn btn-light btn-lg btn-block bottom-btn" id="backSelectFile" type="button" onclick="location.href='./'">戻る</button>
+          </div>
+          <!-- CONTENT END -->
+        </form>
+      </div>
     </div>
-
+    <!-- CONTENT END -->
+    <footer class="footer">
+      <p class="footer-comment">Merry Christmas!<br/>by Norway no Geek</p>
+    </footer>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        $(function() {
-            $('#backSelectFile').on("click",function()
-            {
-                location.href="./";
-            });
-        });
-    </script>
 </body>
 
 </html>

@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <title>ScanMe_シェア</title>
+    <title>ScanMe | みんなにシェアしよう!</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" id="themesid">
@@ -42,14 +42,18 @@
                         <a class="textLine" id="shareUrl">{{ url }}</a>
                     </div>
                 </div>
-                <div class="lower" style="margin-top:-30px;">
-                    <footer class="fixed-bottom">
-                        <div class="text-center">
-                            <button type="button" data-clipboard-target="#shareUrl" class="btn btn-dark btn-lg">URLをコピー</button><br><br>
-                            <a href="./" class="btn btn-light btn-lg" style="width: 50vw;">最初に戻る</a>
-                        </div>
-                    </footer>
+                <div>
+                  <div class="text-center">
+                      <button type="button" data-clipboard-target="#shareUrl" class="btn btn-dark btn-lg btn-block top-btn">URLをコピー</button>
+                      <a href="./" class="btn btn-light btn-lg btn-block bottom-btn">最初に戻る</a>
+                  </div>
                 </div>
+                <!-- Twitter Share Button START -->
+                <div class="btn-block btn-light2 bottom-btn ">
+                  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Hack ID：44　自撮りで簡単にあなたの3Dモデルが作れるアプリ「ScanMe」でサンタになってみたよ {{url}}" data-url="https://scanme.tokyo/" data-hashtags="HackDay作品, つくるってたのしいね, hackdayjp" data-related="norwaynogeek" data-lang="ja" data-show-count="false">Tweet</a>
+                  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+                <!-- Twitter Share Button END -->
             </div>
         </div>
     </div>

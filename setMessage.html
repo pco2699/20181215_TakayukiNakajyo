@@ -6,83 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Scan Me!_メッセージ</title>
-
+    <title>ScanMe | メッセージを書こう </title>
     <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" id="themesid">
-
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.css" rel="stylesheet">
-
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
-
 <body>
-    <header>
-
-    </header>
-    <div class="container">
-        <div class="row">
-            <div>
-
-                <div class="text-center text-vertical-center">
-                    <form method="post" action="./shareModel.html">
-
-                        <!-- メッセージ入力画面 -->
-                        <div id="disp1" style="min-height: 100vh;">
-                            <div class="upper2">
-                                <textarea class="form-control" cols="20" id="set_message" name="message" placeholder="メッセージを入力してください *" rows="5"></textarea>
-                                <img src="./static/images/SCANME.gif" style="width: 32vw;hight:auto;padding-top: 6.5em; ">
-                            </div>
-                            <div class="lower">
-                                <footer class="fixed-bottom">
-                                    <a class="btn btn-dark btn-lg" style="margin: 0;">
-                                        <label for="sendMessage">
-                                            決定
-                                            <input type="submit" id="sendMessage" value="" style="display:none;">
-                                        </label>
-                                    </a>
-                                    <a class="btn btn-light btn-lg" style="width: 50vw;margin-top: 5px;">
-                                        <label for="backSelectFile">
-                                            戻る
-                                            <input id="backSelectFile" type="button" style="display:none;">
-                                        </label>
-                                    </a>
-                                </footer>
-                            </div>
-                        </div>
-
-                    </form>
-
-                </div>
-
-            </div>
+  <div class="message-area">
+    <div class="text-center text-vertical-center">
+      <form method="post" action="./shareModel.html">
+        <!-- メッセージ入力画面 -->
+        <div>
+            <textarea class="form-control" cols="20" id="set_message" name="message" placeholder="メッセージを入力してください *" rows="5"></textarea>
+            <img src="./static/images/scanmeX_wait.gif" class="wait-gif">
         </div>
+        <!-- Button Area -->
+        <div class="button-menu">
+          <a class="btn btn-dark btn-lg top-btn">
+            <label for="sendMessage">
+            モデルを生成する
+            <input type="submit" id="sendMessage" value="" style="display:none;">
+            </label>
+          </a>
+          <a class="btn btn-light btn-lg bottom-btn">
+            <label for="backSelectFile">
+            戻る
+            <input id="backSelectFile" type="button" style="display:none;">
+            </label>
+          </a>
+        </div>      
+      </form>
     </div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script>
-        $(function() {
-            $('#backSelectFile').on("click",function()
-            {
-                location.href="./index.html";
-            });
-        });
-
-    </script>
+  </div>
+  <footer class="footer">
+    <p class="footer-comment">Merry Christmas!<br/>by Norway no Geek</p>
+  </footer>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script>
+      $(function() {
+          $('#backSelectFile').on("click",function()
+          {
+              location.href="./index.html";
+          });
+      });
+  </script>
 </body>
-
 </html>

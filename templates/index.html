@@ -7,8 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <title>ScanMe</title>
-
+    <title>ScanMe | お手軽3Dモデリングアプリ </title>
     <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" id="themesid">
 
@@ -36,14 +35,17 @@
             <!-- スタート画面 -->
             <div id="disp1" >
                 <h1 style="display:none;">Scan Me</h1>
-                <img src="{{ url_for('static', filename='images/scanme_font_blue.png') }}" style="width: 263px;height:auto;margin-top:-80px">
+                <img src="{{ url_for('static', filename='images/scanmeXmaslogo3.png') }}" class="mainlogo">
                 <br>
-                <br>
-                <br>
-                <br>
-                <!-- ボタン -->
+                <!-- choose pic btn -->
                 <input type="file" id="uploadFile" style="display:none;" name="image" class="img">
-                <button type="button" class="btn btn-dark btn-lg" style="width: 193px; margin-bottom:-100px;" onclick="$('#uploadFile').click()">写真を選ぶ</button>
+                <button type="button" class="btn btn-dark btn-lg btn-block top-btn" onclick="$('#uploadFile').click()">
+                  顔写真を選ぼう
+                </button>
+                <!-- how to use btn -->
+                <button type="button" class="btn btn-dark btn-lg btn-block bottom-btn"  onclick="location.href='/qrcode'">
+                    QRコードを表示
+                </button>
             </div>
 
             <!-- 画像確認画面 -->
@@ -52,8 +54,8 @@
                     <div id="imagePreview" src=""></div>
                 </div>
                 <div class="lower">
-                    <button class="btn btn-dark btn-lg" type="submit">この写真でOK！</button>
-                    <button class="btn btn-light btn-lg" type="button" style="width: 50vw;" id="cancelFile">キャンセル</button>
+                    <button class="btn btn-dark btn-lg btn-block top-btn" type="submit">この画像を3次元にする</button>
+                    <button class="btn btn-light btn-lg btn-block bottom-btn" type="button" id="cancelFile">画像を選び直す</button>
                 </div>
             </div>
         </form>
@@ -61,14 +63,9 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <hr class="small">
-                    <p class="text-muted">Copyright &copy; Norway's geek</p>
-                </div>
-            </div>
-        </div>
+      <div class="container">
+        <p class="footer-comment">Merry Christmas!<br/>by Norway no Geek</p>
+      </div>
     </footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

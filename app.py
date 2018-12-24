@@ -96,6 +96,11 @@ def favicon():
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
+@app.route('/qrcode')
+def qrcode():
+    return render_template('qrcode.html')
+
+
 if __name__ == '__main__':
     debug = bool(os.environ['DEBUG'])
     app.run(debug=debug)
