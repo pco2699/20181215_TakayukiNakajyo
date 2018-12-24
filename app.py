@@ -96,9 +96,9 @@ def favicon():
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
-@app.route('/test')
-def test():
-    return render_template('ar/index.html', model_name='9bU6b', message='メリークリスマス')
+@app.route('/qrcode')
+def qrcode():
+    return render_template('qrcode.html')
 
 
 if __name__ == '__main__':
