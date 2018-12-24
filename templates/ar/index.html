@@ -6,12 +6,12 @@
     <script src="{{ url_for('static', filename='scripts/aframe-html-shader.min.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/html2canvas.min.js') }}"></script>
     <link href="{{ url_for('static', filename='css/stylish-portfolio.css') }}" rel="stylesheet">
-<body style='margin : 0px; overflow: hidden;'>
+<body style='margin : 0px; overflow: hidden; background-color: transparent!important;'>
     <div id="message">
         <p id="element">{{ message }}</p>
     </div>
     <a-scene embedded arjs="debugUIEnabled:false;trackingMethod:best;" vr-mode-ui="enabled: false">
-     <a-assets> 
+     <a-assets>
         <a-asset-item id="santa_f-obj" src="{{ url_for('static', filename='model/santa/santa_f.obj') }}"></a-asset-item>
         <a-asset-item id="santa_f-mtl" src="{{ url_for('static', filename='model/santa/santa_f.mtl') }}"></a-asset-item>
         <a-asset-item id="sample_face-obj" src="https://s3-ap-northeast-1.amazonaws.com/pco2699/models/{{ model_name }}.obj"></a-asset-item>
@@ -21,7 +21,7 @@
         <a-entity id="sample_face" obj-model="obj:#sample_face-obj;" position="-0.25 1.72 -0.1" scale="0.0025 0.0025 0.0025" rotation="0 0 -90"></a-entity>
         <a-entity id="message" geometry="primitive: plane; width: 1; height: 0.25" material="shader:html;target: #message;" position="0 2.15 0"></a-entity>
     </a-marker>
-    <a-entity camera></a-entity> 
+    <a-entity camera></a-entity>
 </a-scene>
 </body>
 </html>
