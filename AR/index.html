@@ -11,15 +11,15 @@
 <body style='margin : 0px; overflow: hidden;'>
 <a-scene embedded arjs="debugUIEnabled:false;trackingMethod:best;" vr-mode-ui="enabled: false">
     <a-assets>
-        <!--<a-asset-item id="kagamimochi-obj" src="model/kagamimochi/kagamimochi.obj"></a-asset-item>-->
-        <!--<a-asset-item id="kagamimochi-mtl" src="model/kagamimochi/kagamimochi.mtl"></a-asset-item>-->
-        <a-asset-item id="santa_f-obj" src="model/santa/santa_f.obj"></a-asset-item>
-        <a-asset-item id="santa_f-mtl" src="model/santa/santa_f.mtl"></a-asset-item>
+        <a-asset-item id="kagamimochi-obj" src="model/kagamimochi/kagamimochi.obj"></a-asset-item>
+        <a-asset-item id="kagamimochi-mtl" src="model/kagamimochi/kagamimochi.mtl"></a-asset-item>
+        <!--<a-asset-item id="santa_f-obj" src="model/santa/santa_f.obj"></a-asset-item>-->
+        <!--<a-asset-item id="santa_f-mtl" src="model/santa/santa_f.mtl"></a-asset-item>-->
         <!--<a-asset-item id="fukano_face-obj" src="model/fukano_face.obj"></a-asset-item>-->
     </a-assets>
     <a-marker preset="custom" type='pattern' url="marker/pattern-marker.patt">
-        <a-obj-model id="santa_f" src="#santa_f-obj" mtl="#santa_f-mtl" position="0 0 0" scale="0.8 0.8 0.8" rotation="0 0 0"></a-obj-model>
-        <!--<a-obj-model id="kagamimochi" src="#kagamimochi-obj" mtl="#kagamimochi-mtl" position="0 0 0" scale="0.8 0.8 0.8" rotation="0 -90 0"></a-obj-model>-->
+        <!--<a-obj-model id="santa_f" src="#santa_f-obj" mtl="#santa_f-mtl" position="0 0 0" scale="0.8 0.8 0.8" rotation="0 0 0"></a-obj-model>-->
+        <a-obj-model id="kagamimochi" src="#kagamimochi-obj" mtl="#kagamimochi-mtl" position="0 0 0" scale="0.8 0.8 0.8" rotation="0 -90 0"></a-obj-model>
         <!--<a-entity id="fukano_face" obj-model="obj:#fukano_face-obj;" position="-0.25 1.72 -0.1" scale="0.0025 0.0025 0.0025" rotation="0 0 -90"></a-entity>-->
         <!--<a-entity id="sakai_face" obj-model="obj:#sakai_face-obj;" position="0.145 1.8 -0.05" scale="0.0018 0.0018 0.0018" rotation="0 9 180"></a-entity>-->
         <!--<a-entity id="sample_face" obj-model="obj:#sample_face-obj;" position="0.145 1.8 0" scale="0.0018 0.0018 0.0018" rotation="0 9 180"></a-entity>-->
