@@ -36,11 +36,11 @@
           <!-- メッセージ入力画面 -->
           <div>
               <textarea class="form-control" cols="20" id="set_message" name="message" placeholder="メッセージを入力してください *" rows="5" maxlength="20"></textarea>
-              <img src="{{ url_for('static', filename='images/scanmeX_wait.gif') }}" class="wait-gif">
+              <img src="{{ url_for('static', filename='images/scanmeNewYear.gif') }}" class="wait-gif">
           </div>
           <!-- CONTENT START -->
           <div class="button-menu">
-            <button class="btn btn-dark btn-lg btn-block top-btn" type="submit" id="sendMessage" value="">モデル作成</button>
+            <button class="btn btn-dark btn-lg btn-block top-btn" type="submit" id="sendMessage" value="">お餅をつくる</button>
             <input type="hidden" name="randname" value="{{ randname }}">
             <button class="btn btn-light btn-lg btn-block bottom-btn" id="backSelectFile" type="button" onclick="location.href='./'">戻る</button>
           </div>
@@ -50,7 +50,7 @@
     </div>
     <!-- CONTENT END -->
     <footer class="footer">
-      <p class="footer-comment">Merry Christmas!<br/>by Norway no Geek</p>
+      <p class="footer-comment">Happy NewYear!<br/>by Norway no Geek</p>
     </footer>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
